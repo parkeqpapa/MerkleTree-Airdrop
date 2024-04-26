@@ -30,4 +30,6 @@ contract Token is ERC20 {
         bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(addr, index, amount))));
         require(MerkleProof.verify(proof, merkleRoot, leaf), "Invalid proof");
     }
+
+   
 }
